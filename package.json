@@ -3,7 +3,9 @@
   "description": "Source code for the Junior Test Task of project bazaarorigin.com",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint src"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",

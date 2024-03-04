@@ -1,0 +1,23 @@
+.card {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.media {
+  height: 150px;
+}
+
+.title {
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+

@@ -1,0 +1,43 @@
+.adDetailContainer {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .adDetailCarousel {
+    height: 30vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .adDetailContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+  }
+  
+  .adDetailTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .adDetailActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .adDetailLocation {
+    margin-bottom: 20px;
+  }
+  
+  .adDetailDescription {
+    margin-bottom: 40px;
+  }
+  

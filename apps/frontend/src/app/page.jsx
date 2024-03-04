@@ -1,16 +1,27 @@
-'use client'
+'use client';
 
+import React, { useCallback, useState } from 'react';
+import { Button, Box, CircularProgress } from '@mui/material';
 import axios from 'axios';
-import React, { useCallback } from 'react';
-import { Button, Box } from '@mui/material';
 import styles from './index.module.scss';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AdsList from '../pages/ads';
 
+const Page = () => {
+  const [loading, setLoading] = useState(false);
 
-const Index = () => {
   const fetchAds = useCallback(() => {
     const fetchData = async () => {
-      const { data } = await axios.get('/api/ads?minPrice=1000000');
-      console.log(data);
+      try {
+        setLoading(true);
+        const { data } = await axios.get('/api/ads?minPrice=1000000');
+      } catch (error) {
+        console.error(error);
+        toast.error('Failed to fetch data');
+      } finally {
+        setLoading(false);
+      }
     }
     fetchData();
   }, []);
@@ -19,12 +30,14 @@ const Index = () => {
     <div className={styles.container}>
       <Box alignContent="center">
         <h1>And here it starts...</h1>
-        <Button onClick={fetchAds} variant='outlined'>
-          Send an API request
+        <Button onClick={fetchAds} variant='outlined' disabled={loading}>
+          {loading ? <CircularProgress size={24} /> : 'Send an API request'}
         </Button>
       </Box>
+      <AdsList />
+      <ToastContainer />
     </div>
   );
 }
 
-export default Index;
+export default Page;
